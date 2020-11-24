@@ -1,0 +1,138 @@
+$text-color: #fff
+
+
+html, body
+    margin: 0
+    padding: 0
+
+    scroll-behavior: smooth
+
+body
+    font: 16px 'Castoro', 'Arial', serif
+
+    color: $text-color
+    background-image: url(/images/background.png)
+    background-size: auto 100%
+
+a
+    color: inherit
+    text-decoration: none
+
+
+main
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 90vh
+    margin-bottom: 10vh
+    text-align: center
+
+    img
+        width: 90%
+        max-width: 1200px
+        height: auto
+    p
+        font-size: 18px
+        width: 90%
+        max-width: 600px
+        margin: 1em auto 2em
+    a
+        opacity: 0.5
+
+section
+    box-sizing: content-box
+    padding: 3em
+    margin: 5em auto
+    width: 90%
+    max-width: 700px
+    border-radius: 6px
+    color: #222
+    background-color: #DFBACE
+    box-shadow: 0 0 50px rgba(#fff, 0.4), 0 9px 8px -6px rgba(#000, 0.8)
+
+    & > h1
+        text-align: center
+        font-size: 2.5em
+
+footer
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 200px
+    text-align: center
+
+    .socials
+        display: flex
+
+        a
+            display: inline-block
+            box-sizing: border-box
+            font-size: 18px
+            padding: 10px;
+            width: 42px
+            vertical-align: middle
+            border-radius: 50%
+            margin: auto 0.5em
+            border: 2px solid rgba(#000, 0.4)
+            opacity: 0.7
+
+            &:nth-child(1)
+                background-color: #0d114a
+            &:nth-child(2)
+                background-color: #b53b7c
+            &:nth-child(3)
+                background-color: #5d4878
+
+            &:hover
+                opacity: 1
+
+.gameinfos
+    display: grid
+    margin: 2em 0
+    grid-template-columns: repeat(3, 1fr)
+    gap: 1em
+
+    div 
+        text-align: center
+
+        h1
+            padding: 0.4em 0
+            margin: 0.5em 2em
+            border-bottom: 1px solid rgba(#000, 0.3)
+        p
+            margin: 0.6em 0
+
+.character
+    display: grid
+    margin: 1em 0 2em
+    gap: 1em
+    grid-template-columns: repeat(2, 1fr)
+
+    @mixin characterMaskGradient($dir)
+        $mask-gradient: linear-gradient($dir, transparent 10%, black 30%)
+
+        -webkit-mask-image: $mask-gradient
+        mask-image: $mask-gradient
+
+    .info
+        padding: 1em
+        h1
+            text-align: center
+            padding: 0.8em 0
+            margin: 1em 2em
+            border-bottom: 2px solid rgba(#000, 0.3)
+    img
+        display: block
+        max-width: 100%
+
+        @include characterMaskGradient(10deg)
+        
+    
+    &:nth-child(even) img
+        grid-row: 1
+        grid-column: 1
+
+        @include characterMaskGradient(-10deg)
+        
