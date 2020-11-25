@@ -2,14 +2,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Where is Eleanor Rose?</title>
+        <meta property="og:title" content="Where is Eleanor Rose?"/>
+        <meta property="og:description" content="Ever since they met, Eleanor Rose and Georgia Daisy have been inseparable. Now Eleanor is gone and Georgia feels lost without her best friend, willing to do just about anything to get her back."/>
+        <meta property="og:image" content="https://whereseleanor.design/img/eleanor-sqr.png"/>
+        <meta property="og:locale" content="en_GB"/>
+
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="shortcut icon" href="/images/favicon.png">
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
 
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" defer rel="stylesheet">
     </head>
 
     <body>
@@ -17,6 +23,7 @@
             <div class="background">
                 <img class="parallax-image" src="/images/background.jpg" />
             </div>
+            
             <div class="foreground">
                 <main>
                     <img draggable="false" src="/images/banner.png" />
@@ -60,7 +67,7 @@
                                 Eleanor is 15 years old and a Junior. She is loud and very confident, so she often comes off as arrogant, but she's very friendly and outgoing by nature.
                             </p>
                         </div>
-                        <img draggable="false" src="/images/eleanor.png" />
+                        <img draggable="false" loading="lazy" src="/images/eleanor.png" />
                     </div>
                     <div class="character">
                         <div class="info">
@@ -68,15 +75,28 @@
                             <p>
                                 Georgia is 15 years old and a Junior. She spends pretty much all of her time with her best friend Eleanor since she's very introverted and has difficulties making new friends.</p>
                         </div>
-                        <img draggable="false" src="/images/georgia.png" />
+                        <img draggable="false" loading="lazy" src="/images/georgia.png" />
                     </div>
 
                     <h1>Screenshots</h1>
-                    <p>TODO</p>
+                    <div class="carousel">
+                        <div class="controls">
+                            <span class="prev"></span>
+                            <span class="next"></span>
+                            <ul class="bullets">
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <img draggable="false" loading="lazy" src="/images/screenshots/screensh_anim1.jpg"/>
+                            <img draggable="false" loading="lazy" src="/images/screenshots/screensh_vn.jpg"/>
+                            <img draggable="false" loading="lazy" src="/images/screenshots/screensh_vn_path.jpg"/>
+                            <img draggable="false" loading="lazy" src="/images/screenshots/screensh_overw.jpg"/>
+                        </div>
+                    </div>
 
                     <h1>The Team</h1>
                     <p>We are Team KDG, a 5-student-team of the vocational school Spengergasse consisting of three game developers and two animators. This is our first game "Where is Eleanor Rose?", which we developed for the past year as our diploma project.</p>
-                    <img draggable="false" src="images/team-kdg.jpg"/>
+                    <img draggable="false" loading="lazy" src="images/team-kdg.jpg"/>
                     <p class="text-centered">Follow our developer accounts on Instagram!</p>
                     <div class="teaminfos">
                         <div>
@@ -112,5 +132,7 @@
                 </footer>
             </div>
         </div>
+
+        <script src="/js/script.js" lang="javascript"></script>
     </body>
 </html>

@@ -237,6 +237,109 @@ footer
 
 .text-centered
     text-align: center
+
+.carousel 
+    position: relative
+    width: 100%
+    padding-top: percentage(9 / 16)
+    overflow: hidden
+    border-radius: 4px
+    filter: drop-shadow(3px 3px 6px rgba(#000, 0.4))
+
+    .controls
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 5
+
+        .next, .prev
+            $size: 14px
+            $strength: 6px
+
+            display: block
+            position: absolute
+            top: 50%
+            width: $size
+            height: $size
+            margin: 0 1em
+            border-bottom: $strength solid #fff
+            border-right: $strength solid #fff
+            opacity: 0.5
+            transition: opacity 0.15s
+            cursor: pointer
+
+            &:hover
+                opacity: 1
+
+        .next
+            right: 0
+            transform: translateY(-7px) rotate(-45deg)
+        .prev
+            left: 0
+            transform: rotate(-45deg - 180deg)
+
+
+        ul.bullets, ol.bullets
+            position: absolute
+            display: flex
+            justify-content: center
+            padding: 0
+            margin: 0.4em 0
+            bottom: 0
+            left: 0
+            width: 100%
+            list-style: none
+
+            li
+                $size: 30px
+                $size-frac: 3
+
+                width: $size
+                height: $size
+                opacity: 0.5
+                transition: opacity 0.15s
+                cursor: pointer
+
+                &::after
+                    content: ""
+                    position: absolute
+                    margin: $size / $size-frac
+                    width: $size / $size-frac
+                    height: $size / $size-frac
+                    background-color: #fff
+                    border-radius: 50%
+
+                &.active, &:hover
+                    opacity: 1
+    
+    .content
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            transform: translateX(0px) translateZ(0px)
+            transition: transform 0.8s
+            box-shadow: 0 0 22px rgba(#000, 0.5)
+            z-index: 1
+
+            &.active
+                z-index: 2
+            &.to-right
+                transform: translateX(-110%)
+                z-index: 3
+            &.to-left
+                transform: translateX(110%)
+                z-index: 3
         
 @media screen and (max-width: $mobile-breakpoint)
     body
@@ -254,6 +357,10 @@ footer
         gap: 0.5em
         margin: 2em 1em
 
+    .teaminfos
+        grid-template-columns: 1fr
+        gap: 1em
+
     .character
         grid-template-columns: 1fr
         gap: 0.5em
@@ -264,3 +371,6 @@ footer
             grid-row: auto !important
         .info
             padding: unset
+
+    .carousel .controls ul.bullets li:hover:not(.active)
+        opacity: 0.5
