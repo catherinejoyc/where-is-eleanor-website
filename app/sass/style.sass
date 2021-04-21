@@ -162,7 +162,6 @@ footer
 
         h1
             padding: 0.4em 0
-            margin: 0.5em 2em
             border-bottom: 1px solid rgba(#000, 0.3)
         p
             margin: 0.6em 0
@@ -177,7 +176,6 @@ footer
         text-align: center
         h1 
             font-size: 1.2em
-            margin: 0 1.5em 0.5em
             padding-bottom: 0.4em
             border-bottom: 2px solid rgba(#000, 0.2)
             a::before
@@ -200,7 +198,6 @@ footer
         h1
             text-align: center
             padding: 0.8em 0
-            margin: 1em 2em
             border-bottom: 2px solid rgba(#000, 0.3)
     img
         display: block
@@ -340,6 +337,14 @@ footer
             &.to-left
                 transform: translateX(110%)
                 z-index: 3
+        
+iframe.itch-embed
+    display: flex;
+    margin: 1em auto 1.5em
+
+@media screen and (max-width: 800px)
+    iframe.itch-embed
+        display: none
         
 @media screen and (max-width: $mobile-breakpoint)
     body
