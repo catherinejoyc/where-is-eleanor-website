@@ -10,18 +10,16 @@ gulp.task("sass", function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task(
-    "serve",
-    gulp.series("sass", function () {
-        browserSync.init({
-            server: {
-                baseDir: "./app",
-            },
-        });
+gulp.task("sync", function () {
+    browserSync.init({
+        server: {
+            baseDir: "./app",
+        },
+    });
 
-        gulp.watch("app/sass/*.sass", gulp.series("sass"));
-        gulp.watch("app/*html").on("change", browserSync.reload);
-    })
-);
+    gulp.watch("app/sass/*.sass", gulp.series("sass"));
+    gulp.watch("app/*html").on("change", browserSync.reload);
+});
 
-gulp.task("build", gulp.series("serve"));
+gulp.task("dev", gulp.series("sass", "sync"));
+gulp.task("build", gulp.series("sass"));

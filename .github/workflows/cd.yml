@@ -1,23 +1,27 @@
-name: Deploy to GitHub Pages
+name: CD
 
 on:
     workflow_dispatch:
+
     push:
-        branches: [main]
+        branches:
+            - main
 
 jobs:
-    build-and-deploy:
+    cd:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v2
 
-            - name: Install and Build
-              run: |
-                  npm install
-                  gulp build
+            - name: Install
+              run: npm install
+
+            - name: Build
+              run: gulp build
+
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@4.1.1
               with:
-                  branch: pages
+                  branch: gh-pages
                   folder: .
